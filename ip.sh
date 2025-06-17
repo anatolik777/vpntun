@@ -1,12 +1,7 @@
 #!/bin/bash
 
-# Проверяем, что передан необходимый аргумент
-if [ $# -ne 1 ]; then
-    echo "Использование: $0 <новый_значение>"
-    exit 1
-fi
-
-NEW_VALUE=$1
+# Запрашиваем у пользователя новое значение
+read -p "Введите новое значение для SOCKS_PROXY: " NEW_VALUE
 
 # Устанавливаем путь к файлу
 FILE="amn-via-socks.sh"
@@ -18,8 +13,7 @@ if [ ! -f "$FILE" ]; then
 fi
 
 # Замена части строки номер 10 от SOCKS_PROXY="socks5:// до "
-sed -i '10s|SOCKS_PROXY="socks5://.*"|SOCKS_PROXY="socks5://'$NEW_VALUE'"|' "$FILE"
+sed -i '10s|SOCKS_PROXY="socks5://.*"|SOCKS_PROXY="socks5://'$NEW_VALUE'"|' ">
 systemctl restart amn-via-socks
 
-echo "В строке номер 10 была заменена часть на 'SOCKS_PROXY=\"$NEW_VALUE\"' в файле '$FILE'."
-
+echo "В строке номер 10 была заменена часть на 'SOCKS_PROXY=\"$NEW_VALUE\"' в>
