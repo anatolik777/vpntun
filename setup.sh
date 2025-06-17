@@ -13,6 +13,7 @@ chmod +x *
 mv amn-via-socks.service /etc/systemd/system/
 mv tun2socks /usr/local/bin
 mv amn-via-socks.sh /root
+mv ip.sh /root
 cd ..
 
 # Удаление директории vpntun
