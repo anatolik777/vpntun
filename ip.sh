@@ -19,6 +19,7 @@ fi
 
 # Замена части строки номер 10 от SOCKS_PROXY="socks5:// до "
 sed -i '10s|SOCKS_PROXY="socks5://.*"|SOCKS_PROXY="socks5://'$NEW_VALUE'"|' "$FILE"
+systemctl restart amn-via-socks
 
 echo "В строке номер 10 была заменена часть на 'SOCKS_PROXY=\"$NEW_VALUE\"' в файле '$FILE'."
 
