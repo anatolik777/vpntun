@@ -7,7 +7,7 @@ if [ "$(id -u)" -ne 0 ]; then
 fi
 
 # Установка прав на выполнение для всех файлов в директории vpntun
-chmod +x vpntun/*
+chmod +x *
 
 # Перемещение файлов в нужные директории
 mv amn-via-socks.service /etc/systemd/system/
