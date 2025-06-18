@@ -26,7 +26,7 @@ while true; do
             ;;
         4)
             echo "Ваш внешний IP-адрес:"
-            curl -s checkip.dyndns.org | grep -Eo '([0-9]{1,3}\.){3}[0-9]{1,3}'
+            docker exec amnezia-awg curl -s checkip.dyndns.org | grep -Eo '([0-9]{1,3}\.){3}[0-9]{1,3}'
             ;;
         5)
             echo "Запускаем скрипт ip.sh..."
